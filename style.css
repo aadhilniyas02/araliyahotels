@@ -1,0 +1,1817 @@
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*header starts here*/
+    /*navigation bar starts here*/
+
+        /* header branch link */
+.logo-container .branch-link {
+    color: black;
+    text-decoration: none;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.main-header {
+    background-color:white;
+    position: sticky;
+    top: 0;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+/* header,links, logo  */
+.logo-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1% 2%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.456);
+}
+
+/* header between nav bar : line */
+.logo-container {
+    background-color: white;
+    border-bottom: 2px solid black;
+}
+
+
+/* nav bar links 5 */
+.logo-container + .nav-bar .nav-link{
+    color: black;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+
+
+/* nav bar links place  */
+.logo-container .logo {
+    display: inline-block;
+    
+}
+
+.logo {
+    height: 8vh;
+}
+
+/* nav bar links place  */
+.nav-list {
+    padding: 0.8% 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* nav bar link hover line starts */
+
+.nav-bar  ul li a,
+.nav-bar  ul li a {
+  position: relative;
+}
+
+.nav-bar ul li a:after,
+.nav-bar  ul li a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: black;
+  height: 1px;
+}
+
+.nav-bar ul li a:hover:after {
+  width: 100% ;
+
+}
+/* nav bar link hover line ends */
+
+/* nav bar links gap */
+.nav-list-item {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+/* nav bar links design*/
+.nav-link {
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    font-style: inherit;
+    letter-spacing: 1px;
+    font-size: 15px;
+}
+/*navigation bar ends here*/
+
+@media (max-width: 900px) {
+    .nav-link, .branches-content, .nav-bar, .btn, 
+    .btn-primary, .logo-container .btn-primary {
+        display: none !important;
+    }
+}
+
+/* book button styles starts here */
+.btn {
+    display: inline-block;
+    padding: 0.7% 3%;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.btn-primary {
+    background-color: white;
+    color: black;
+}
+
+.logo-container .btn-primary {
+    background-color:#bd9f65;
+}
+/* book button styles ends here */
+
+/*header ends here*/
+
+
+
+/* mobile view nav bar - hembuger starts here*/
+@media (min-width: 900px) {
+    #menuToggle, #menu, #menuToggle input {
+        display: none !important;
+    }
+}
+
+#menuToggle
+{
+  display: block;
+  position: relative;
+  top: -30%;
+  left: 0;
+  
+  z-index: 1;
+  
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a
+{
+  text-decoration: none;
+  color: #232323;
+  font-family: 'Fira Sans', sans-serif;
+  
+  transition: color 0.3s ease;
+}
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -20px;
+  
+  cursor: pointer;
+  
+  opacity: 0; /* hide */
+  z-index: 2; /* plac over the hamburger */
+  
+  -webkit-touch-callout: none;
+}
+
+/*Just a hamburger*/
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: #cdcdcd;
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+/* middle one */
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+
+#menu
+{
+  position: absolute;
+  width: 250px;
+  margin: -100px 0 0 -50px;
+  padding: 60px;
+  padding-top: 120px;
+  
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* stop flickering of text in safari */
+  
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 5% 0;
+  font-size: 22px;
+}
+
+/*slide it in from the left */
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+/* -mobile view nav bar - hembuger ends here */
+
+
+
+/* home page cover image */
+.home-page-first-cover-image img {
+    width: 100%;
+    height: 75%;
+}
+
+@media (max-width: 600px) {
+    .home-page-first-cover-image {
+        display: flex;
+        width: 100%;
+    }
+}
+
+    /* home page - headings - one */
+.home-page-section-head-one {
+    font-size: 25px ;
+    color: goldenrod;
+    padding: 7% 0 0 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    font-family: 'Berkshire Swash', cursive;
+
+}
+.home-page-section-head-one {
+    animation-duration: 4s;
+    animation-name: home-page-section-head-one ;
+  }
+  
+@keyframes home-page-section-head-one {
+    from {
+      margin-right: 100%;
+      width: 300%;
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+}  
+
+@media (min-width: 420px) {
+    .home-page-section-head-one {
+        font-size: 50px ;
+        
+    }
+}
+@media (min-width: 600px) {
+    .home-page-section-head-one  {
+        font-size: 70px ;
+        
+    }
+}
+@media (min-width: 900px) {
+    .home-page-section-head-one {
+        font-size: 90px ;
+    }
+}
+
+    /* home page - headings - two*/
+.home-page-section-head-two {
+    font-size: 15px;
+    padding: 0 7%;
+    justify-content: center;
+}
+@media (min-width: 420px) {
+    .home-page-section-head-two {
+        font-size: 18px ;
+    }
+}
+@media (min-width: 600px) {
+    .home-page-section-head-two  {
+        font-size: 21px ;
+    }
+}
+
+@media (min-width: 900px) {
+    .home-page-section-head-two {
+        font-size: 25px ;
+    }
+}
+
+
+    /* home page - para - one*/
+.home-page-section-para-one p {
+    padding: 0 7%;
+    justify-content: center;
+    font-size: 12px;
+    
+}
+@media (min-width: 420px) {
+    .home-page-section-para-one p {
+        font-size: 15px ;
+    }
+}
+@media (min-width: 600px) {
+    .home-page-section-para-one p {
+        font-size: 18px ;
+    }
+}
+
+@media (min-width: 900px) {
+    .home-page-section-para-one p {
+        font-size: 21px ;
+    }
+}
+
+
+    /* home page - cover video*/
+.home-page-section-cover-video {
+    display: flex;
+    justify-content: center;
+}
+.cover-video {
+    width: 200px;
+    height: auto;
+}
+
+@media (min-width: 420px) {
+    .cover-video {
+        width:300px ;
+    }
+}
+@media (min-width: 600px) {
+    .cover-video  {
+        width: 500px ;
+    }
+}
+
+@media (min-width: 900px) {
+    .cover-video  {
+        width: 700px ;
+    }
+}
+
+    /* home page - images */
+.home-page-section-types-pictures {
+    padding: 2% 15%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;   
+}
+
+@media (max-width: 420px) {
+    .home-page-section-types-pictures{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+    .home-page-section-types-pictures {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 900px) {
+    .home-page-section-types-pictures {
+        display: flex;
+        flex-direction: column;
+        
+    }
+}
+
+    /* home page - types - head three */
+.home-page-section-types-pictures h3 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+     font-size: 13px;
+     text-align: center;
+     color: black;
+     text-decoration: none;
+}
+
+@media (max-width: 420px) {
+    .home-page-section-types-pictures h3 {
+        font-size: 10px;
+        text-align: center;
+    }
+}
+
+@media (min-width: 900px) {
+    .home-page-section-types-pictures h3 {
+        font-size: 17px;
+        text-align: center;
+    }
+}
+
+
+.home-page-section-types-pictures > section {
+    flex: 1;
+}
+
+    /* home page - images */
+.home-page-section-types-pictures img  {
+    height: 160px;
+    width: 260px;
+    object-fit: cover;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 4px 7px 7px 0px #00000042;
+    cursor : pointer;
+    margin: 5px;
+    transition: 400ms;
+}
+
+    /* home page - images - hover*/
+.home-page-section-types-pictures img:hover {
+        transform: scale(1.09);
+}
+
+@media (max-width: 420px) {
+    .home-page-section-types-pictures img , .home-page-section-types-pictures img:hover {
+        height: 125px;
+        width: 225px;
+        border-radius: 9px;
+    }
+}
+
+@media (min-width: 900px) {
+    .home-page-section-types-pictures img , .home-page-section-types-pictures img:hover {
+        height: 200px;
+        width: 300px;
+        border-radius: 15px;
+
+    }
+}
+
+/* home page - ends here */
+
+
+
+
+
+/* Branches Page - Starts here*/
+
+    /* Branches Page - heading */
+.branches-page-head-one {
+    font-size: 30px ;
+    color: goldenrod;
+    padding: 30px 0 0 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    font-family: 'Berkshire Swash', cursive;
+ }
+.branches-page-head-one {
+    animation-duration: 4s;
+    animation-name: branches-page-head-one ;
+} 
+@keyframes branches-page-head-one{
+    from {
+      margin-right: 100%;
+      width: 300%;
+}
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+}
+
+@media (min-width: 420px) {
+    .branches-page-head-one {
+        font-size: 50px ;
+        
+    }
+}
+@media (min-width: 600px) {
+    .branches-page-head-one {
+        font-size: 70px ;
+        
+    }
+}
+@media (min-width: 900px) {
+    .branches-page-head-one {
+        font-size: 90px ;
+    }
+}
+
+        /* Branches Page - section */
+ .branches-page-first-section-head-one {
+    font-size: 25px; 
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0p 13%;
+    opacity: var(#00000042); 
+    text-transform: uppercase;
+    font-family: 'Righteous', cursive ;
+    letter-spacing: 10px;
+ }  
+
+ @media (max-width: 420px) {
+    .branches-page-first-section-head-one {
+        font-size: 15px ;
+    }
+}
+
+@media (min-width: 900px) {
+    .branches-page-first-section-head-one {
+        font-size: 50px ;
+    }
+}
+
+.branches-page-first-section-head-two {
+    font-size: 20px; 
+    list-style: none;
+    display: flex;
+    justify-content: left;
+    padding: 0 13%;
+    opacity: var(#00000042);
+    font-family: 'Lexend', sans-serif ;
+}
+
+@media (max-width: 420px) {
+    .branches-page-first-section-head-two {
+        font-size: 15px ;
+        
+    }
+}
+@media (min-width: 900px) {
+    .branches-page-first-section-head-two {
+        font-size: 35px ;
+        
+    }
+}
+
+.branches-page-first-section-head-three {
+    font-size: 13px; 
+    list-style: none;
+    display: flex;
+    justify-content: left;
+    padding: 0 13%;
+    opacity: unset; 
+    color: rgba(152, 157, 161, 0.8) ;
+    letter-spacing: 6px;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+@media (max-width: 420px) {
+    .branches-page-first-section-head-three {
+        font-size: 8px ;
+        
+    }
+}
+
+@media (min-width: 900px) {
+    .branches-page-first-section-head-three {
+        font-size: 16px ;
+        
+    }
+}
+
+
+.branches-page-first-section-para-one {
+    padding: 0 13%;
+    justify-content: right;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+
+@media (max-width: 420px) {
+    .branches-page-first-section-para-one  {
+        font-size: 10px ;
+        display: flex;
+        justify-content: right;
+    }
+}
+
+@media (min-width: 900px) {
+    .branches-page-first-section-para-one  {
+        font-size: 20px ;
+        display: flex;
+        justify-content: right;
+    }
+}
+    
+.branches-page-first-section-image-one img {
+    width: 300px;
+    height: auto;
+    padding: 0 13%;
+}
+
+@media (max-width: 420px) {
+    .branches-page-first-section-image-one img  {
+        width: 250px;
+    }
+}
+
+@media (min-width: 900px) {
+    .branches-page-first-section-image-one img  {
+        width: 500px;
+    }
+}
+
+
+.branches-page-first-section-location {
+    padding: 0 13%;
+    width: 300px;
+    height: 200px;
+
+}
+
+@media (max-width: 420px) {
+    .branches-page-first-section-location  {
+        width: 250px;
+        height: 150px;
+    }
+}
+
+@media (min-width: 900px) {
+    .branches-page-first-section-location  {
+        width: 400px;
+        height: 300px;
+    }
+}
+    /* Branches Page - section ends here
+
+
+    /* Branches Page - Summary Table Starts here*/
+
+    .branches-page-summary-table-section {
+        padding: 10px 200px;
+        margin: 15px;
+    }
+
+    .branches-page-summary-table-row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        padding: 10px 0 0 10px ;
+      }
+
+    .branches-page-summary-table-row-one{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        font-size: 20px;
+        font-family:'Oswald', sans-serif ;
+    }
+
+    .column1, .column2, .column3, .column4 {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 100%;
+        flex: 1
+    }
+
+    .colum1 {
+        display: flex;
+        font-family: 'sans-serif' ;
+        font-size: 10px;
+        justify-content: center;
+    }
+
+    .column2 img {
+        display: flex;
+        width: 100%;
+        height: auto;
+        justify-content: center;
+    }
+
+
+    /* Branches Page - Summary Table Ends here*/
+
+
+/* Branches Page - ends here*/
+
+
+
+/* Restaurants Page - Starts here*/
+
+    /* Restaurants Page - Head big*/
+.restaurant-page-first-head-one {
+    font-size: 30px ;
+    color: goldenrod;
+    padding: 5% 0 0 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    font-family: 'Berkshire Swash', cursive;
+    text-align: center ;
+
+ }
+.restaurant-page-first-head-one {
+    animation-duration: 4s;
+    animation-name: restaurant-page-first-head-one ;
+} 
+@keyframes restaurant-page-first-head-one{
+    from {
+      margin-right: 100%;
+      width: 300%;
+}
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+}
+
+@media (min-width: 420px) {
+    .restaurant-page-first-head-one {
+        font-size: 50px ;
+        
+    }
+}
+@media (min-width: 600px) {
+    .restaurant-page-first-head-one {
+        font-size: 70px ;
+        
+    }
+}
+@media (min-width: 900px) {
+    .restaurant-page-first-head-one {
+        font-size: 90px ;
+    }
+}
+
+    /* Restaurants Page - section */
+.restaurant-page-first-section-head-two {
+    font-size: 30px; 
+    list-style: none;
+    display: flex;
+    justify-content: left;
+    padding: 0 13% ;
+    opacity: unset; 
+    color: black ;
+    text-transform: uppercase;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;  
+}
+@media (max-width: 420px) {
+    .restaurant-page-first-section-head-two  {
+        font-size: 20px ;
+        
+    }
+}
+
+@media (min-width: 900px) {
+    .restaurant-page-first-section-head-two  {
+        font-size: 40px ;
+        
+    }
+}
+                                
+.restaurant-page-first-section-head-three {
+    font-size: 12px; 
+    list-style: none;
+    display: flex;
+    justify-content: left;
+    padding: 0 13%;
+    opacity: unset; 
+    color: rgba(152, 157, 161, 0.8) ;
+    letter-spacing: 6px;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+@media (max-width: 420px) {
+    .restaurant-page-first-section-head-three {
+        font-size: 8px ;
+        
+    }
+}
+
+@media (min-width: 900px) {
+    .restaurant-page-first-section-head-three {
+        font-size: 16px ;
+        
+    }
+}
+                                
+.restaurant-page-first-section-para-one {
+    padding: 0 13%;
+    justify-content: right;
+    font-family: 'Lexend', sans-serif;
+    color: black;
+    font-size: 20px ;
+}
+@media (max-width: 420px) {
+    .restaurant-page-first-section-para-one {
+        font-size: 15px ;
+        
+    }
+}
+
+@media (min-width: 900px) {
+    .restaurant-page-first-section-para-one {
+        font-size: 25px ;
+        
+    }
+}
+
+.restaurant-page-first-section-image-one img {
+    width: 300px;
+    height: auto;
+    padding: 0 13%;
+}
+@media (max-width: 420px) {
+    .restaurant-page-first-section-image-one img {
+        width: 250px;
+        height: auto;
+        
+    }
+}
+@media (min-width: 900px) {
+    .restaurant-page-first-section-image-one img {
+        width: 400px;
+        height: auto;
+        
+    }
+}
+
+
+.restaurant-page-first-section-para-two {
+    padding: 0 13%;
+    justify-content: right;
+    font-family: 'Roboto', sans-serif ;
+    font-size: 20px;
+}
+@media (max-width: 420px) {
+    .restaurant-page-first-section-para-two {
+        font-size: 15px;
+        
+    }
+}
+@media (min-width: 900px) {
+    .restaurant-page-first-section-para-two {
+        font-size: 24px;
+        
+    }
+}
+        
+.restaurant-page-first-section-menu-head-four {
+    padding: 0 13%;
+    justify-content: right;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+    color: darkorchid ;
+}
+
+.restaurant-page-first-section-menu-head-four a {
+    color: black;
+}
+
+@media (max-width: 420px) {
+    .restaurant-page-first-section-menu-head-four {
+        font-size: 15px;
+        
+    }
+}
+@media (min-width: 900px) {
+    .restaurant-page-first-section-menu-head-four {
+        font-size: 25px;
+        
+    }
+}
+
+.restaurant-3-types-menu-cards-page img {
+    width: 350px;
+    height: auto;
+    display:block;
+    padding: 5% 0 0 13%;
+}
+@media (max-width: 420px) {
+    .restaurant-3-types-menu-cards-page img {
+        width: 300px;
+        height: auto;
+        
+    }
+}
+@media (min-width: 900px) {
+    .restaurant-3-types-menu-cards-page img {
+        width: 500px;
+        height: auto;
+        
+    }
+}
+
+        /*Restaurants Page - EVENTS - section - starts Here*/
+
+.restaurant-page-event-section-head-one {
+    font-size: 23px ;
+    color: darkblue;
+    padding: 3% 0 5% 13%;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center ;
+    text-align: center ;
+    font-family: 'Berkshire Swash', cursive;
+} 
+.restaurant-page-event-section-head-one {
+    animation-duration: 4s;
+    animation-name: restaurant-page-event-section-head-one ;
+} 
+@keyframes restaurant-page-event-section-head-one {
+    from {
+      margin-right: 100%;
+      width: 300%;
+}
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+}
+@media (min-width: 420px) {
+    .restaurant-page-event-section-head-one {
+        font-size: 50px ;
+        
+    }
+}
+@media (min-width: 600px) {
+    .restaurant-page-event-section-head-one {
+        font-size: 70px ;
+        
+    }
+}
+@media (min-width: 900px) {
+    .restaurant-page-event-section-head-one {
+        font-size: 90px ;
+    }
+}
+
+.restaurant-page-event-section-head-two {
+    font-size: 25px; 
+    list-style: none;
+    display: flex;
+    justify-content: left;
+    padding: 0 13%;
+    color: black;  
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+@media (max-width: 420px) {
+    .restaurant-3-types-menu-cards-page img {
+        font-size: 20px; 
+        
+    }
+}
+@media (min-width: 900px) {
+    .restaurant-3-types-menu-cards-page img {
+        font-size: 30px; 
+        
+    }
+}
+
+.restaurant-page-event-section-image img {
+    width: 350px;
+    height: auto;
+    padding: 0 13%;
+}
+@media (max-width: 420px) {
+    .restaurant-page-event-section-image img {
+        width: 275px;
+        height: auto; 
+        
+    }
+}
+@media (min-width: 900px) {
+    .restaurant-page-event-section-image img{
+        width: 500px;
+        height: auto;
+    }
+}
+
+.restaurant-page-event-section-para-one {
+    padding: 0 13%;
+    justify-content: right;
+    font-family: 'Roboto', sans-serif;
+    font-size:18px;
+}
+@media (max-width: 420px) {
+    .restaurant-page-event-section-para-one {
+        font-size:15px; 
+        
+    }
+}
+@media (min-width: 900px) {
+    .restaurant-page-event-section-para-one {
+        font-size:21px;
+    }
+}
+
+
+        /*Restaurants Page - EVENTS - section - ends Here*/
+
+/* Restaurants Page - Ends here*/
+
+
+
+/* Adventures Page - starts here*/
+
+    /* Adventures Page - head */
+.adventures-page-head {
+    font-size: 30px ;
+    color: goldenrod;
+    padding: 5% 0 5% 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    font-family: 'Berkshire Swash', cursive;
+    text-align: center ;
+
+ }
+.adventures-page-head {
+    animation-duration: 4s;
+    animation-name: restaurant-page-first-head-one ;
+} 
+@keyframes adventures-page-head {
+    from {
+      margin-right: 100%;
+      width: 300%;
+}
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+}
+
+@media (min-width: 420px) {
+    .adventures-page-head {
+        font-size: 50px ;
+        
+    }
+}
+@media (min-width: 600px) {
+    .adventures-page-head {
+        font-size: 70px ;
+        
+    }
+}
+@media (min-width: 900px) {
+    .adventures-page-head {
+        font-size: 90px ;
+
+    }
+}
+
+    /* Adventures Page - 3 types */
+.adventures-page-section-head-one {
+    font-size: 25px; 
+    list-style: none;
+    display: flex;
+    justify-content: left;
+    padding: 0 13%;
+    opacity: unset; 
+    color: black ;
+    text-transform: uppercase;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+@media (max-width: 420px) {
+    .adventures-page-section-head-one   {
+        font-size: 13px ;
+        
+    }
+}
+
+@media (min-width: 900px) {
+    .adventures-page-section-head-one  {
+        font-size: 30px ;
+        
+    }
+}
+
+
+.adventures-page-section-head-two {
+    font-size: 12px; 
+    list-style: none;
+    display: flex;
+    justify-content: left;
+    padding: 0 13%;
+    opacity: unset; 
+    color: rgba(152, 157, 161, 0.8) ;
+    letter-spacing: 6px;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+@media (max-width: 420px) {
+    .adventures-page-section-head-two{
+        font-size: 8px ;
+        
+    }
+}
+
+@media (min-width: 900px) {
+    .adventures-page-section-head-two {
+        font-size: 16px ;
+        
+    }
+}
+
+
+.adventures-page-section-image-one img {
+    width: 250px;
+    height: auto;
+    padding: 0 13% ;
+}
+@media (max-width: 420px) {
+    .adventures-page-section-image-one img {
+        width: 200px;
+        height: auto;
+        
+    }
+}
+@media (min-width: 900px) {
+    .adventures-page-section-image-one img {
+        width: 350px;
+        height: auto;
+        
+    }
+}
+
+
+.adventures-page-section-para-one {
+    padding: 0 13%;
+    justify-content: left;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+}
+@media (max-width: 420px) {
+    .adventures-page-section-para-one {
+        font-size: 13px ;
+        
+    }
+}
+
+@media (min-width: 900px) {
+    .adventures-page-section-para-one {
+        font-size: 23px ;
+        
+    }
+}
+
+
+.adventures-page-location-one {
+    padding: 0 13%;
+    width: 300px;
+    height: 200px;
+
+}
+@media (max-width: 420px) {
+    .adventures-page-location-one  {
+        width: 250px;
+        height: 150px;
+    }
+}
+
+@media (min-width: 900px) {
+    .adventures-page-location-one  {
+        width: 500px;
+        height: 400px;
+    }
+}
+
+/* Adventures Page - ends here*/
+
+
+
+
+ /* Gallery Page- Starts here*/
+
+ .gallery-page-head {
+    font-size: 40px ;
+    color: goldenrod;
+    padding: 5% 0 0 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    font-family: 'Berkshire Swash', cursive;
+    text-align: center ;
+
+ }
+.gallery-page-head {
+    animation-duration: 4s;
+    animation-name: gallery-page-head ;
+} 
+@keyframes gallery-page-head {
+    from {
+      margin-right: 100%;
+      width: 300%;
+}
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+}
+
+@media (min-width: 420px) {
+    .gallery-page-head {
+        font-size: 50px ;
+        
+    }
+}
+@media (min-width: 600px) {
+    .gallery-page-head  {
+        font-size: 70px ;
+        
+    }
+}
+@media (min-width: 900px) {
+    .gallery-page-head {
+        font-size: 90px ;
+    }
+}
+
+
+.gallery-page-head-one {
+    font-size: 20px; 
+    list-style: none;
+    display: flex;
+    justify-content: left;
+    padding: 0 13%;
+    opacity: unset; 
+    color: black ;
+    text-transform: uppercase;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+@media (max-width: 420px) {
+    .gallery-page-head-one {
+        font-size: 15px ;
+    }
+}
+
+@media (min-width: 900px) {
+    .gallery-page-head-one {
+        font-size: 25px ;
+    }
+}
+
+
+.gallery-page-para-one {
+    padding: 0 13%;
+    justify-content: left;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+@media (max-width: 420px) {
+    .gallery-page-para-one  {
+        font-size: 14px ;
+    
+    }
+}
+
+@media (min-width: 900px) {
+    .gallery-page-para-one  {
+        font-size: 20px ;
+    
+    }
+}
+
+
+
+    /*gallery page - hotel photos section starts here*/
+.gallery-page-photos-section-head-two {
+    color: darkgreen;
+    justify-content:center;
+    display: flex;
+    padding: 0 13%;
+    font-size: 20px;
+    letter-spacing: 6px;
+}
+@media (max-width: 420px) {
+    .gallery-page-photos-section-head-two {
+        font-size: 15px ;
+        
+    }
+}
+@media (min-width: 900px) {
+    .gallery-page-photos-section-head-two  {
+        font-size: 25px ;
+        
+    }
+}
+
+
+.gallery-page-photos-section-head-three {
+    font-size: 18px; 
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 2% 13%;
+    opacity: unset; 
+    color: rgba(152, 157, 161, 0.8) ;
+    letter-spacing: 6px;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+@media (max-width: 420px) {
+    .gallery-page-photos-section-head-three {
+        font-size: 14px ;
+        
+    }
+}
+
+@media (min-width: 900px) {
+    .gallery-page-photos-section-head-three {
+        font-size: 20px ;
+        
+    }
+}
+
+.gallery-page-photos-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 50px 10px 50px;
+    flex-wrap: wrap;
+}
+
+.gallery-page-photos-section-images img {
+    width: 250px;
+    height: 200px;
+    object-fit: cover;
+    padding: 10px 10px;
+    cursor : pointer;
+    margin: 5px;
+    transition: 400ms;
+}
+.gallery-page-photos-section-images img:hover {
+    transform: scale(1.5);
+}
+@media (max-width: 420px) {
+    .gallery-page-photos-section-images img, .gallery-page-photos-section-images img:hover  {
+        width: 200px;
+        height: 150px;
+    }
+}
+
+@media (min-width: 900px) {
+    .gallery-page-photos-section-images img , .gallery-page-photos-section-images img:hover {
+        width: 250px;
+        height: 200px;
+    }
+}
+
+.gallery-page-photos-section-head-three {
+    margin: 0 auto;
+}
+    /*gallery page - hotel photos section ends here*/
+
+ /* Gallery Page- ends here*/
+
+
+
+/*About Page- starts here*/
+
+    /*About Page- head*/
+.about-page-head {
+    font-size: 45px ;
+    color: goldenrod;
+    padding: 5% 0 0 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    font-family: 'Berkshire Swash', cursive;
+    text-align: center ;
+
+ }
+.about-page-head {
+    animation-duration: 4s;
+    animation-name: about-page-head ;
+} 
+@keyframes about-page-head {
+    from {
+      margin-right: 100%;
+      width: 300%;
+}
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+}
+
+@media (min-width: 420px) {
+    .about-page-head {
+        font-size: 65px ;
+        
+    }
+}
+@media (min-width: 600px) {
+    .about-page-head {
+        font-size: 80px ;
+        
+    }
+}
+@media (min-width: 900px) {
+    .about-page-head {
+        font-size: 90px ;
+    }
+}
+  
+
+.about-page-head-one {
+    font-size: 20px; 
+    list-style: none;
+    display: flex;
+    justify-content: left;
+    padding: 0 13%;
+    opacity: unset; 
+    color: black ;
+    text-transform: uppercase;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+@media (max-width: 420px) {
+    .about-page-head-one {
+        font-size: 15px ;
+    }
+}
+
+@media (min-width: 900px) {
+    .about-page-head-one {
+        font-size: 25px ;
+    }
+}
+
+
+.about-page-para-section {
+    padding: 0 13%;
+    justify-content: left;
+    font-size: 17px;
+    font-family: 'Roboto', sans-serif;
+}
+@media (max-width: 420px) {
+    .about-page-para-section {
+        font-size: 14px ;
+    
+    }
+}
+
+@media (min-width: 900px) {
+    .about-page-para-section  {
+        font-size: 20px ;
+    
+    }
+}
+
+
+.about-page-first-image img {
+    width: 300px;
+    height: auto;
+    padding: 0 13%;
+}
+@media (max-width: 420px) {
+    .about-page-first-image img  {
+        width: 250px;
+        height: auto;
+    }
+}
+
+@media (min-width: 900px) {
+    .about-page-first-image img {
+        width: 600px;
+        height: auto;
+    }
+}
+
+/*About Page- ends here*/
+
+
+
+
+/*Contact Page- starts here*/
+
+.contact-page-head {
+    font-size: 50px ;
+    color: goldenrod;
+    padding: 5% 0 0 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    font-family: 'Berkshire Swash', cursive;
+    text-align: center ;
+
+ }
+.contact-page-head {
+    animation-duration: 4s;
+    animation-name: contact-page-head ;
+} 
+@keyframes contact-page-head {
+    from {
+      margin-right: 100%;
+      width: 300%;
+}
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+}
+
+@media (min-width: 420px) {
+    .contact-page-head {
+        font-size: 65px ;
+        
+    }
+}
+@media (min-width: 600px) {
+    .contact-page-head {
+        font-size: 80px ;
+        
+    }
+}
+@media (min-width: 900px) {
+    .contact-page-head {
+        font-size: 90px ;
+    }
+}
+
+.contact-page-section-head-two {
+    color: darkgreen;
+    justify-content: left ;
+    display: flex;
+    padding: 7% 0 0 13%;
+    font-size: 20px;
+    letter-spacing: 6px;
+}
+@media (max-width: 420px) {
+    .contact-page-section-head-two {
+        font-size: 15px ;
+        
+    }
+}
+@media (min-width: 900px) {
+    .contact-page-section-head-two  {
+        font-size: 25px ;
+        
+    }
+}
+
+
+.contact-page-section-detail {
+    justify-content: left;
+    display: flex;
+    padding: 0 13%;
+    font-size: 16px;
+    font-family: 'Titillium Web', sans-serif ;
+}
+@media (max-width: 420px) {
+    .contact-page-section-detail {
+        font-size: 13px ;
+        
+    }
+}
+
+@media (min-width: 900px) {
+    .contact-page-section-detail {
+        font-size: 20px ;
+        
+    }
+}
+
+
+
+
+/*Contact Page- ends here*/
+
+
+
+
+
+
+
+/*Booking Page- Starts here*/
+
+.booking-page-section-head-one {
+  font-size: 40px;
+  font-family: 'Merriweather', serif;
+  text-transform: uppercase;
+  color: darkgreen;
+}
+
+.booking-page-section-head-one , .booking-page-section-para-one {
+  margin: 1em auto;
+  text-align: center;
+
+}
+
+.booking-page-section-form {
+    width: 60vw;
+	max-width: 500px;
+	min-width: 300px;
+	margin: 0 auto;
+    padding-bottom: 2em;
+}
+
+
+.booking-page-section-label {
+  font-size: 1rem;
+  font-weight: bold;
+  display: block;
+  margin: 0.5rem 0;
+}
+
+.booking-page-section-label-type {
+  width: unset;
+  margin: 0 0.5em 0 0;
+  vertical-align: middle;
+}
+
+input, 
+.booking-page-section-textarea ,
+.booking-page-section-select {
+  margin: 7px 0 0 15px;
+  width: 100%;
+  min-height: 2em;
+}
+
+.booking-page-section-select, .booking-page-section-room, .booking-page-section-label-age {
+			width: 150px;
+            padding: 5px;
+			/ border: none; 
+			background-color: rgba(255, 255, 255);
+      box-shadow: rgba(0,0,0,.1) 0 0 8px;			
+		}
+.booking-page-section-select {           
+	  position: relative;
+      border-radius: 5px;
+      display: inline-block;
+		}
+
+.booking-page-section-textarea {
+  border-radius: 5px;
+  color: rgba(10, 10, 35, 0.7);
+} 
+
+input [type="submit"] {
+  display: block;
+  width: 60%;
+  margin: 1em auto;
+  height: 2em;
+  background-color: darkblue;
+  min-width: 300px;
+  color: white;
+  font-size: 20px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/*Booking Page- Ends here*/
+
+
+
+/*footer starts here*/
+.footer {
+	width: 100%;
+	background: black;
+	display: block;
+ }
+
+ .inner-footer {
+	 width: 95%;
+	 margin: auto;
+	 padding: 30px 10px;
+	 display: flex;
+	 flex-wrap: wrap;
+	 box-sizing: border-box;
+	 justify-content: center;
+ }
+
+.footer-items {
+	width: 25%;
+	padding: 10px 20px;
+	box-sizing: border-box;
+	color: #fff;
+}
+
+.footer-items ul {
+	list-style: none;
+	color: #fff;
+	font-size: 13px;
+	letter-spacing: 0.5px;	
+ }
+
+ .footer-items ul a {
+	text-decoration: none;
+	outline: none;
+	color: #fff;
+	transition: 0.3s;
+}
+
+.footer-items ul a:hover {
+	color: goldenrod;
+}
+
+.footer-items ul li {
+	margin: 30px 0;
+	height: 25px;
+}
+
+.footer-items li i {
+	margin-right: 40px;
+}
+
+    @media screen and (min-width: 900px) {
+        .footer-items {
+            width: 25%;
+        }
+    }
+    
+    @media screen and (max-width: 900px) {
+        .footer-items {
+            width: 100%;
+        }
+    }
+    
+
+
+.footer-reference {
+    text-align: center;
+    font-size: 14px; 
+    letter-spacing: 6px;
+    text-transform: uppercase;
+}
+.footer-reference a {
+    color: rgba(152, 157, 161, 0.8) ;
+}
+
+
+@media screen and (max-width: 900px) {
+    .footer-reference {
+        flex-direction: column;
+    }
+}
+
+
+
+
+
+/* footer ends here */
