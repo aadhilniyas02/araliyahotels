@@ -1361,32 +1361,6 @@ a {
 }
 
 
-.gallery-page-photos-section-head-three {
-    font-size: 18px; 
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    padding: 2% 13%;
-    opacity: unset; 
-    color: rgba(152, 157, 161, 0.8) ;
-    letter-spacing: 6px;
-    line-height: 1.5;
-    text-transform: uppercase;
-}
-@media (max-width: 420px) {
-    .gallery-page-photos-section-head-three {
-        font-size: 14px ;
-        
-    }
-}
-
-@media (min-width: 900px) {
-    .gallery-page-photos-section-head-three {
-        font-size: 20px ;
-        
-    }
-}
-
 .gallery-page-photos-section {
     display: flex;
     justify-content: space-around;
